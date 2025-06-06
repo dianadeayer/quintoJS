@@ -1,0 +1,39 @@
+html {
+  height: 100%;
+  background: #0f0f0f;
+  background-size: cover;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 40px;
+  color: ghostwhite;
+}
+
+.album-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.album-cover {
+  width: 64px;
+  height: 64px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.album-title {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+table thead th {
+  border-bottom: 0.5px solid #fff;
+}
+
+table th,
+table td {
+  text-align: left;
+}
