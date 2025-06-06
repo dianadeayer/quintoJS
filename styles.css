@@ -10,27 +10,110 @@ body {
   color: ghostwhite;
 }
 
+.artist-cover {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  background: rgba(24, 24, 24, 0.95);
+  padding: 32px 24px 24px 24px;
+  border-radius: 12px;
+  margin-bottom: 48px;
+  box-shadow: 0 4px 24px #000a;
+}
+
+.artist-cover-img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px #000a;
+}
+
+.artist-cover-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.artist-name {
+  margin: 0 0 12px 0;
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+.artist-listeners {
+  margin: 0;
+  font-size: 1.2em;
+  color: #ccc;
+}
+
 .album-header {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 8px;
+  gap: 24px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  padding: 24px;
+  min-width: 0;
 }
 
 .album-cover {
   width: 64px;
-  height: 64px;
+  height: 100%;
   border-radius: 4px;
   object-fit: cover;
 }
 
 .album-title {
   margin: 0;
-  font-size: 1.5em;
+  font-size: 1.6em;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 32px;
+  background: transparent;
 }
 
 table thead th {
-  border-bottom: 0.5px solid #fff;
+  border-bottom: 1.5px solid #282828;
+  color: #b3b3b3;
+  font-weight: 500;
+  padding: 12px 8px;
+  font-size: 1em;
+  letter-spacing: 0.5px;
+  background: transparent;
+}
+
+table tbody tr:hover {
+  background: #232323;
+}
+
+table td {
+  padding: 12px 8px;
+  color: #fff;
+  font-size: 1em;
+  vertical-align: middle;
+}
+
+table th:first-child,
+table td:first-child {
+  width: 40px;
+  color: #b3b3b3;
+  text-align: right;
+}
+
+table th:last-child,
+table td:last-child {
+  text-align: right;
+  width: 80px;
+  color: #b3b3b3;
 }
 
 table th,
