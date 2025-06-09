@@ -11,40 +11,43 @@ body {
 }
 
 .artist-cover {
-  display: flex;
   align-items: center;
   gap: 32px;
   background: rgba(24, 24, 24, 0.95);
-  padding: 32px 24px 24px 24px;
-  border-radius: 12px;
+  border-radius: 8px;
   margin-bottom: 48px;
   box-shadow: 0 4px 24px #000a;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
 .artist-cover-img {
-  width: 180px;
-  height: 180px;
+  width: 100%;
+  height: 400px;
   object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 4px 24px #000a;
+  display: block;
 }
 
 .artist-cover-info {
+  position: absolute;
+  top: 60%;
+  left: 2%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  box-sizing: border-box;
 }
 
 .artist-name {
   margin: 0 0 12px 0;
-  font-size: 2.5em;
+  font-size: 3.5em;
   font-weight: bold;
 }
 
 .artist-listeners {
   margin: 0;
   font-size: 1.2em;
-  color: #ccc;
+  color: #ffffff;
 }
 
 .album-header {
@@ -58,10 +61,11 @@ body {
 }
 
 .album-cover {
-  width: 64px;
-  height: 100%;
-  border-radius: 4px;
+  width: 136px;
+  height: 136px;
+  border-radius: 8px;
   object-fit: cover;
+  box-shadow: 0 2px 8px #0006;
 }
 
 .album-title {
@@ -69,9 +73,45 @@ body {
   font-size: 1.6em;
   font-weight: 600;
   color: #fff;
-  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
+}
+
+.album-title:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.album-info {
+  display: flex;
+  flex-direction: column;
+  color: #a9a8a8;
+}
+
+.play-button {
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 12px;
+  box-shadow: 0 2px 8px #0003;
+  transition: transform 0.1s;
+}
+.play-button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 16px #0005;
+}
+
+.play-button svg {
+  width: 19px;
+  height: 19px;
+  fill: #0f0f0f;
+  stroke-width: 1.5;
 }
 
 table {
@@ -83,7 +123,7 @@ table {
 
 table thead th {
   border-bottom: 1.5px solid #282828;
-  color: #b3b3b3;
+  color: #a9a8a8;
   font-weight: 500;
   padding: 12px 8px;
   font-size: 1em;
