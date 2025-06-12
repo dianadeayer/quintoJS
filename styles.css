@@ -87,18 +87,24 @@ body {
   color: #a9a8a8;
 }
 
+.album-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+  align-items: center;
+}
+
 .play-button {
   background: #fff;
   border: none;
   border-radius: 50%;
-  width: 36px;
-  height: 36px;
+  width: 33px;
+  height: 33px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   padding: 0;
-  margin-top: 12px;
   box-shadow: 0 2px 8px #0003;
   transition: transform 0.1s;
 }
@@ -108,10 +114,62 @@ body {
 }
 
 .play-button svg {
-  width: 19px;
-  height: 19px;
+  width: 16px;
+  height: 16px;
   fill: #0f0f0f;
   stroke-width: 1.5;
+}
+
+.add-button {
+  background: none;
+  border: none;
+  border-radius: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.1s;
+  padding: 0;
+}
+
+.add-button svg {
+  width: 28px;
+  height: 28px;
+  fill: #a9a8a8;
+  stroke: #a9a8a8;
+  stroke-width: 0.5;
+}
+
+.add-button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 16px #0005;
+}
+
+.more-button {
+  background: none;
+  border: none;
+  border-radius: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.1s;
+  padding: 0;
+}
+
+.more-button svg {
+  width: 20px;
+  height: 20px;
+  stroke: #a9a8a8;
+  fill: #a9a8a8;
+}
+
+.more-button:hover {
+  transform: scale(1.08);
 }
 
 table {
@@ -121,14 +179,18 @@ table {
   background: transparent;
 }
 
-table thead th {
-  border-bottom: 1.5px solid #282828;
+.table-header th {
+  border-bottom: none;
   color: #a9a8a8;
   font-weight: 500;
   padding: 12px 8px;
   font-size: 1em;
   letter-spacing: 0.5px;
   background: transparent;
+}
+
+.table-header tr {
+  border-bottom: 1.5px solid #282828;
 }
 
 table tbody tr:hover {
@@ -142,21 +204,51 @@ table td {
   vertical-align: middle;
 }
 
-table th:first-child,
-table td:first-child {
+.table-header th:first-child,
+.table-body td:first-child {
   width: 40px;
   color: #b3b3b3;
   text-align: right;
 }
 
-table th:last-child,
-table td:last-child {
+.table-header th:last-child,
+.table-body td:last-child {
   text-align: right;
   width: 80px;
   color: #b3b3b3;
 }
 
-table th,
-table td {
+.track-title {
   text-align: left;
+}
+
+.track-add {
+  width: 36px;
+  text-align: center;
+}
+
+.add-track-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+tr:hover .add-track-button {
+  visibility: visible;
+}
+
+.add-track-button svg {
+  width: 18px;
+  height: 18px;
+  stroke: #a9a8a8;
+  fill: #a9a8a8;
+  stroke-width: 1;
+  transition: transform 0.1s;
+}
+
+.add-track-button:hover svg {
+  stroke: #a9a8a8;
+  transform: scale(1.08);
 }
