@@ -246,7 +246,10 @@ body {
 
 .add-button:hover {
   transform: scale(1.08);
-  box-shadow: 0 4px 16px #0005;
+}
+
+.add-button:hover svg {
+  fill: #fff;
 }
 
 .more-button {
@@ -272,6 +275,10 @@ body {
 
 .more-button:hover {
   transform: scale(1.08);
+}
+
+.more-button:hover svg {
+  fill: white;
 }
 
 table {
@@ -394,6 +401,6 @@ tr:hover .add-track-button {
 }
 
 .add-track-button:hover svg {
-  stroke: #a9a8a8;
+  fill: white;
   transform: scale(1.08);
 }

@@ -43,10 +43,10 @@ const createStickyBar = (artist) => {
   const stickyBar = document.createElement("div");
   stickyBar.className = "sticky-bar";
   stickyBar.innerHTML = `
-     <span class="sticky-artist">${artist}</span>
-    <button class="stop-btn" aria-label="Stop">
+   <button class="stop-btn" aria-label="Stop">
       <svg viewBox="0 0 24 24" width="24" height="24"><rect x="6" y="6" width="12" height="12" rx="2" fill="#fff"/></svg>
     </button>
+  <span class="sticky-artist">${artist}</span>
   `;
   return stickyBar;
 };
