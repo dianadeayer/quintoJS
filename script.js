@@ -13,12 +13,12 @@ const createArtistHeader = (headerImage, artist, monthlyListeners) => {
   <img src="${headerImage}" alt="Artist cover" class="artist-cover-img">
   <div class="artist-cover-info">
   <p class="artist-verified">
-  <svg class="verified-icon" viewBox="0 0 24 24" width="20" height="20" aria-label="Verified">
-    <g>
-      <path fill="#1da1f2" d="M12 2.25c.6 0 1.17.34 1.43.89l1.13 2.29c.13.26.39.43.68.43h2.5c.66 0 1.19.53 1.19 1.19v2.5c0 .29.17.55.43.68l2.29 1.13c.55.26.89.83.89 1.43s-.34 1.17-.89 1.43l-2.29 1.13a.75.75 0 0 0-.43.68v2.5c0 .66-.53 1.19-1.19 1.19h-2.5a.75.75 0 0 0-.68.43l-1.13 2.29a1.19 1.19 0 0 1-2.14 0l-1.13-2.29a.75.75 0 0 0-.68-.43h-2.5a1.19 1.19 0 0 1-1.19-1.19v-2.5a.75.75 0 0 0-.43-.68l-2.29-1.13a1.19 1.19 0 0 1 0-2.14l2.29-1.13a.75.75 0 0 0 .43-.68v-2.5c0-.66.53-1.19 1.19-1.19h2.5c.29 0 .55-.17.68-.43l1.13-2.29A1.19 1.19 0 0 1 12 2.25z"/>
-      <path fill="#fff" d="M10.75 14.25l-2-2a.75.75 0 1 1 1.06-1.06l1.47 1.47 3.47-3.47a.75.75 0 1 1 1.06 1.06l-4 4a.75.75 0 0 1-1.06 0z"/>
-    </g>
-  </svg>
+<svg class="verified-icon" viewBox="0 0 24 24" width="20" height="20" aria-label="Verified">
+  <g>
+    <path class="verified-bg" d="M12 2.25c.6 0 1.17.34 1.43.89l1.13 2.29c.13.26.39.43.68.43h2.5c.66 0 1.19.53 1.19 1.19v2.5c0 .29.17.55.43.68l2.29 1.13c.55.26.89.83.89 1.43s-.34 1.17-.89 1.43l-2.29 1.13a.75.75 0 0 0-.43.68v2.5c0 .66-.53 1.19-1.19 1.19h-2.5a.75.75 0 0 0-.68.43l-1.13 2.29a1.19 1.19 0 0 1-2.14 0l-1.13-2.29a.75.75 0 0 0-.68-.43h-2.5a1.19 1.19 0 0 1-1.19-1.19v-2.5a.75.75 0 0 0-.43-.68l-2.29-1.13a1.19 1.19 0 0 1 0-2.14l2.29-1.13a.75.75 0 0 0 .43-.68v-2.5c0-.66.53-1.19 1.19-1.19h2.5c.29 0 .55-.17.68-.43l1.13-2.29A1.19 1.19 0 0 1 12 2.25z"/>
+    <path class="verified-check" d="M10.5 13.5l-1.5-1.5a.75.75 0 1 1 1.06-1.06l1 1 3-3a.75.75 0 1 1 1.06 1.06l-3.5 3.5a.75.75 0 0 1-1.06 0z"/>
+  </g>
+</svg>
   ${verified ? "Verified Artist" : ""}</p>
     <h1 class="artist-name">${artist}</h1>
     <p class="artist-listeners">${monthlyListeners.toLocaleString()} monthly listeners</p>
@@ -27,14 +27,48 @@ const createArtistHeader = (headerImage, artist, monthlyListeners) => {
   return coverHeader;
 };
 
+const createActionBar = (artist) => {
+  const actionBar = document.createElement("div");
+  actionBar.className = "action-bar";
+  actionBar.innerHTML = `
+   <button class="play-main-btn" aria-label="Play">
+      <svg viewBox="0 0 24 24" width="28" height="28"><path fill="#fff" d="M5 3.87v16.26c0 1.04 1.13 1.68 2.02 1.13l13.09-8.13c.89-.55.89-1.71 0-2.26L7.02 2.74C6.13 2.19 5 2.83 5 3.87z"/></svg>
+    </button>
+    <button class="follow-btn">Follow</button>
+  `;
+  return actionBar;
+};
+
+const createStickyBar = (artist) => {
+  const stickyBar = document.createElement("div");
+  stickyBar.className = "sticky-bar";
+  stickyBar.innerHTML = `
+     <span class="sticky-artist">${artist}</span>
+    <button class="stop-btn" aria-label="Stop">
+      <svg viewBox="0 0 24 24" width="24" height="24"><rect x="6" y="6" width="12" height="12" rx="2" fill="#fff"/></svg>
+    </button>
+  `;
+  return stickyBar;
+};
+
 const createTracksTable = (tracks) => {
   const table = document.createElement("table");
   table.innerHTML = `
-    <thead class="table-header">
-      <tr><th>#</th><th>Título</th><th>Duración</th></tr>
-    </thead>
-    <tbody></tbody>
-  `;
+  <thead class="table-header">
+    <tr>
+      <th>#</th>
+      <th>Título</th>
+      <th></th> <!-- columna para add track -->
+      <th>
+        <svg class="duration-icon" viewBox="0 0 16 16" width="18" height="18" aria-label="Duración">
+          <path d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8"></path>
+          <path d="M8 3.25a.75.75 0 0 1 .75.75v3.25H11a.75.75 0 0 1 0 1.5H7.25V4A.75.75 0 0 1 8 3.25"></path>
+        </svg>
+      </th>
+    </tr>
+  </thead>
+  <tbody class="table-body"></tbody>
+`;
   const tbody = table.querySelector("tbody");
   tracks.forEach((trackItem, index) => {
     const track = trackItem.track;
@@ -46,7 +80,16 @@ const createTracksTable = (tracks) => {
       .padStart(2, "0");
     const durationStr = `${minutes}:${seconds}`;
     row.innerHTML = `
-  <td>${index + 1}</td>
+     <td class="track-number">
+        <span class="track-index">${index + 1}</span>
+        <button class="track-play-btn" aria-label="Play track" title="Play ${
+          track.name
+        }">
+  <svg viewBox="0 0 24 24" width="20" height="20">
+    <polygon points="8,6 18,12 8,18" fill="#fff"/>
+  </svg>
+</button>
+      </td>
   <td class="track-title">${track.name}</td>
   <td class="track-add">
     <button class="add-track-button" aria-label="Add track" title="Add ${
@@ -101,12 +144,43 @@ const createAlbumBlock = (release) => {
 };
 
 const renderArtistPage = () => {
-  document.body.prepend(
-    createArtistHeader(headerImage, artist, monthlyListeners)
-  );
+  // sticky bar primero
+  const stickyBar = createStickyBar(artist);
+  document.body.prepend(stickyBar);
+
+  const header = createArtistHeader(headerImage, artist, monthlyListeners);
+  stickyBar.after(header);
+
+  const actionBar = createActionBar(artist);
+  header.after(actionBar);
+
+  const albumsContainer = document.createElement("div");
+  albumsContainer.className = "albums-container";
+  actionBar.after(albumsContainer);
+
   albums.forEach((albumItem) => {
-    const release = albumItem.releases.items[0];
-    document.body.appendChild(createAlbumBlock(release));
+    if (
+      albumItem.releases &&
+      albumItem.releases.items &&
+      albumItem.releases.items[0]
+    ) {
+      const release = albumItem.releases.items[0];
+      albumsContainer.appendChild(createAlbumBlock(release));
+    }
+  });
+
+  stickyBar.style.opacity = 0;
+  stickyBar.style.pointerEvents = "none";
+
+  window.addEventListener("scroll", () => {
+    const rect = actionBar.getBoundingClientRect();
+    if (rect.bottom < 0) {
+      stickyBar.style.opacity = 1;
+      stickyBar.style.pointerEvents = "auto";
+    } else {
+      stickyBar.style.opacity = 0;
+      stickyBar.style.pointerEvents = "none";
+    }
   });
 };
 
