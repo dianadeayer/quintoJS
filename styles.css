@@ -1,0 +1,425 @@
+html {
+  height: 100%;
+  background: #0f0f0f;
+  background-size: cover;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 40px;
+  color: ghostwhite;
+  padding-top: 56px;
+}
+
+.sticky-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: rgba(24, 24, 24, 0.98);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 32px;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+
+.play-btn {
+  background: #1ed760;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+  padding: 0;
+  box-shadow: none;
+}
+
+.play-btn:hover {
+  transform: scale(1.08);
+}
+
+.sticky-artist {
+  color: #fff;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.play-button {
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 33px;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.1s;
+}
+
+.play-button svg {
+  width: 28px;
+  height: 28px;
+}
+
+.action-bar {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 0px 0px 10px 18px;
+  opacity: 1;
+  transition: opacity 0.4s;
+}
+
+.play-main-btn {
+  background: #1ed760;
+  border: none;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 24px rgba(30, 215, 96, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.play-main-btn:hover {
+  transform: scale(1.06);
+}
+
+.follow-btn {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 999px;
+  padding: 8px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.follow-btn:hover {
+  background: #fff;
+  color: #181818;
+}
+
+.artist-cover {
+  align-items: center;
+  gap: 32px;
+  background: rgba(24, 24, 24, 0.95);
+  border-radius: 8px;
+  margin-bottom: 48px;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.artist-cover-img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+.artist-cover-info {
+  position: absolute;
+  top: 60%;
+  left: 2%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.verified-icon {
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.verified-bg {
+  fill: #2196f3;
+}
+
+.verified-check {
+  fill: #fff;
+  transform: translateY(2px);
+}
+
+.artist-name {
+  margin: 0 0 12px 0;
+  font-size: 3.5em;
+  font-weight: bold;
+}
+
+.artist-listeners {
+  margin: 0;
+  font-size: 1.2em;
+  color: #ffffff;
+}
+
+.album-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  padding: 24px;
+  min-width: 0;
+}
+
+.stop-btn {
+  background: #1ed760;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.stop-btn:hover {
+  transform: scale(1.08);
+}
+
+.album-cover {
+  width: 136px;
+  height: 136px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.duration-icon {
+  vertical-align: middle;
+  fill: #b3b3b3;
+  display: inline-block;
+}
+
+.album-title {
+  margin: 0;
+  font-size: 1.6em;
+  font-weight: 600;
+  color: #fff;
+  overflow: hidden;
+}
+
+.album-title:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.album-info {
+  display: flex;
+  flex-direction: column;
+  color: #a9a8a8;
+}
+
+.album-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+  align-items: center;
+}
+
+.play-button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 16px #0005;
+}
+
+.add-button {
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 0;
+  display: flex;
+  width: 24px;
+  height: 24px;
+  justify-content: center;
+  transition: transform 0.1s;
+  padding: 0;
+}
+
+.add-button svg {
+  width: 28px;
+  height: 28px;
+  fill: #a9a8a8;
+  stroke: #a9a8a8;
+  stroke-width: 0.5;
+}
+
+.add-button:hover {
+  transform: scale(1.08);
+}
+
+.add-button:hover svg {
+  fill: #fff;
+}
+
+.more-button {
+  background: none;
+  border: none;
+  border-radius: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.1s;
+  padding: 0;
+}
+
+.more-button svg {
+  width: 20px;
+  height: 20px;
+  stroke: #a9a8a8;
+  fill: #a9a8a8;
+}
+
+.more-button:hover {
+  transform: scale(1.08);
+}
+
+.more-button:hover svg {
+  fill: white;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 32px;
+  background: transparent;
+}
+
+.table-header th {
+  border-bottom: none;
+  color: #a9a8a8;
+  font-weight: 500;
+  padding: 12px 8px;
+  font-size: 1em;
+  letter-spacing: 0.5px;
+  background: transparent;
+}
+
+.table-header tr {
+  border-bottom: 1.5px solid #282828;
+}
+
+table tbody tr:hover {
+  background: #232323;
+}
+
+table td {
+  padding: 12px 8px;
+  color: #fff;
+  font-size: 1em;
+  vertical-align: middle;
+}
+
+.table-header th:first-child,
+.table-body td:first-child {
+  width: 40px;
+  color: #b3b3b3;
+  text-align: left;
+}
+
+.table-header th:first-child,
+.table-header th:nth-child(2) {
+  text-align: left;
+}
+
+.table-body td:last-child {
+  text-align: right;
+  width: 80px;
+  color: #b3b3b3;
+}
+
+.table-header th:last-child {
+  text-align: right;
+}
+
+.track-play-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+  outline: none;
+  display: inline-flex;
+  fill: #fff;
+  align-items: left;
+  justify-content: left;
+  visibility: hidden;
+}
+
+.track-play-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+tr:hover .track-number .track-index {
+  visibility: hidden;
+}
+
+tr:hover .track-number .track-play-btn {
+  visibility: visible;
+}
+
+.track-number {
+  position: relative;
+  width: 40px;
+  text-align: left;
+}
+
+.track-index,
+.track-play-btn {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.track-title {
+  text-align: left;
+}
+
+.track-add {
+  width: 36px;
+  text-align: center;
+}
+
+.add-track-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+tr:hover .add-track-button {
+  visibility: visible;
+}
+
+.add-track-button svg {
+  width: 18px;
+  height: 18px;
+  stroke: #a9a8a8;
+  fill: #a9a8a8;
+  stroke-width: 1;
+  transition: transform 0.1s;
+}
+
+.add-track-button:hover svg {
+  fill: #fff;
+  transform: scale(1.08);
+}
